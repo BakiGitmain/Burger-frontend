@@ -1,0 +1,153 @@
+.contact-page {
+  background: #0A0F0E;
+  color: white;
+  padding: 40px 5%;
+  min-height: 100vh;
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+}
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #091413;
+  border-top: 3px solid #ffb300;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.contact-hero span {
+  color: #ffb300;
+}
+
+.contact-hero p {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: #091413;
+  padding: 25px;
+  border-radius: 12px;
+  width: 250px;
+
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255,179,0,0.2);
+}
+
+.info-card h3 {
+  color: #ffb300;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  color: #bbb;
+}
+
+.contact-form {
+  background: rgba(9, 20, 19, 0.8);
+  padding: 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  width: 350px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 1px solid #333;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+
+  transition: 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ffb300;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255,179,0,0.3);
+}
+
+.contact-form button {
+  background: #ffb300;
+  color: black;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255,179,0,0.5);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .info-card {
+    width: 100%;
+  }
+}

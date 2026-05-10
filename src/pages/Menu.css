@@ -1,0 +1,494 @@
+.body {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+.menu-page {
+  min-height: 100vh;
+  padding: 60px;
+  background: #0a0f0e;
+  color: white;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.menu-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+.menu-subtitle {
+  color: #9ca3af;
+  font-size: 1rem;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+
+}
+
+.menu-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 34px;
+}
+
+.filter-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #e5e7eb;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: #ffb300;
+  color: #ffb300;
+}
+
+.filter-btn.active {
+  background: #ffb300;
+  color: #111827;
+  border-color: #ffb300;
+  font-weight: 600;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.menu-card {
+  background: linear-gradient(180deg, #0d1317, #0a1014);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.menu-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.menu-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.menu-card:hover .menu-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.menu-type-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+.menu-type-badge.burger {
+  background: rgba(255, 179, 0, 0.18);
+  color: #ffb300;
+}
+
+.menu-type-badge.pizza {
+  background: rgba(255, 99, 71, 0.18);
+  color: #ff7a59;
+}
+
+.menu-type-badge.drink {
+  background: rgba(0, 200, 255, 0.18);
+  color: #00c8ff;
+}
+
+.menu-type-badge.chicken {
+  background: rgba(255, 140, 0, 0.18);
+  color: #ff9d2f;
+}
+
+.menu-type-badge.fries {
+  background: rgba(255, 215, 0, 0.18);
+  color: #ffd700;
+}
+
+.menu-type-badge.dessert {
+  background: rgba(255, 105, 180, 0.18);
+  color: #ff7ac3;
+}
+
+.menu-type-badge.sandwich {
+  background: rgba(120, 255, 120, 0.18);
+  color: #7dff7d;
+}
+
+.menu-card-body {
+  padding: 18px 16px 16px;
+}
+
+.menu-item-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #f9fafb;
+}
+
+.menu-price-row {
+  margin-bottom: 16px;
+}
+
+.menu-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffb300;
+}
+
+.add-cart-btn {
+  width: 60%;
+  border: none;
+  background: #ffb300;
+  color: #111827;
+  padding: 12px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.add-cart-btn:hover {
+    background: #e6a103;
+  transform: translateY(-3px);
+  opacity: 0.95;
+}
+
+.menu-empty {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .menu-page {
+    padding: 40px 24px;
+  }
+
+  .menu-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-page {
+    padding: 30px 16px;
+  }
+
+  .menu-title {
+    font-size: 1.9rem;
+  }
+
+  .menu-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-img-wrapper {
+    height: 200px;
+  }
+
+  .filter-btn {
+    padding: 9px 16px;
+    font-size: 0.88rem;
+  }
+}
+/* =========================
+   LOADING WRAPPER
+========================= */
+.menu-loading-wrap {
+  width: 100%;
+  padding: 10px 0 20px;
+}
+
+/* =========================
+   SKELETON GRID
+========================= */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* =========================
+   SKELETON CARD
+========================= */
+.skeleton-card {
+  background: linear-gradient(180deg, #0d1317, #0a1014);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* IMAGE PLACEHOLDER */
+.skeleton-img {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #11181d;
+}
+
+/* CONTENT AREA */
+.skeleton-body {
+  padding: 18px 16px 16px;
+}
+
+/* TITLE */
+.skeleton-line {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #121b20;
+}
+
+/* TITLE BIG */
+.skeleton-line.title {
+  width: 68%;
+  height: 18px;
+  margin-bottom: 16px;
+}
+
+/* PRICE */
+.skeleton-line.price {
+  width: 36%;
+  height: 16px;
+  margin-bottom: 18px;
+}
+
+/* BUTTON */
+.skeleton-line.button {
+  width: 100%;
+  height: 42px;
+  border-radius: 999px;
+}
+
+/* TYPE BADGE */
+.skeleton-badge {
+  width: 72px;
+  height: 24px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  background: #121b20;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   SHIMMER EFFECT
+========================= */
+.skeleton-img::after,
+.skeleton-line::after,
+.skeleton-badge::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  animation: shimmer 1.25s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 170%;
+  }
+}
+
+/* =========================
+   LOADING TEXT STYLE
+========================= */
+.menu-loading-text {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+
+/* =========================
+   CENTER SPINNER
+========================= */
+.center-loader {
+  width: 58px;
+  height: 58px;
+  margin: 70px auto 20px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 179, 0, 0.14);
+  border-top: 4px solid #ffb300;
+  animation: spin 0.85s linear infinite;
+  box-shadow: 0 0 18px rgba(255, 179, 0, 0.12);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   FILTER SWITCH OVERLAY
+========================= */
+.menu-grid.loading-switch {
+  position: relative;
+  min-height: 320px;
+}
+
+.menu-grid.loading-switch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 14, 0.45);
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+  z-index: 4;
+}
+
+.menu-grid.loading-switch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 4px solid rgba(255, 179, 0, 0.18);
+  border-top: 4px solid #ffb300;
+  animation: spin 0.85s linear infinite;
+  z-index: 5;
+  box-shadow: 0 0 18px rgba(255, 179, 0, 0.12);
+}
+
+/* =========================
+   DOTS LOADER
+========================= */
+
+
+/* 🔥 SKELETON GRID */
+.skeleton-grid {
+  display: grid;
+
+  /* 🔥 EXACT SAME AS MENU GRID */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+
+  gap: 24px;
+  width: 100%;
+}
+
+/* CARD */
+.skeleton-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0d1317;
+}
+
+/* IMAGE */
+.skeleton-img {
+  height: 200px;
+  background: #1a2328;
+}
+
+/* BODY */
+.skeleton-body {
+  padding: 15px;
+}
+
+/* LINES */
+.skeleton-line {
+  height: 12px;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  background: #1a2328;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-line.title {
+  width: 70%;
+  height: 16px;
+}
+
+.skeleton-line.price {
+  width: 40%;
+}
+
+.skeleton-line.button {
+  width: 100%;
+  height: 40px;
+  border-radius: 999px;
+}
+
+/* 🔥 SHIMMER */
+.skeleton-line::after,
+.skeleton-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
